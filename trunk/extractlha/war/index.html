@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+    pre { font-family: monospace; }
+    </style>
+    <title>Extract LHA</title>
+  </head>
+
+  <body>
+
+<h1>Extract LHA</h1>
+
+<p>親プロジェクト <a href="http://code.google.com/p/zippyzipjp/">zippyzipjp</a></p>
+
+<form action="/extractlha" method="get">
+  <input type="hidden" name="req" value="fetch"/>
+  <input type="text" name="url" value="" style="width:36em;"/>
+  <input type="submit" name="OK"/>
+</form>
+
+<p>LHAで圧縮されたファイルを解凍して、ZIP形式に圧縮し直します。</p>
+<p>日本語のファイル名には対応していません。</p>
+<p>日本郵便が次のURLで提供する郵便番号データだけでしかテストしていません。</p>
+<pre>http://www.post.japanpost.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
+http://www.post.japanpost.jp/zipcode/dl/jigyosyo/lzh/jigyosyo.lzh</pre>
+<p>したがって、複数のファイルやフォルダを含む場合に正常に処理できるかどうか定かではありません。</p>
+<p>日本語のファイル名には対応していません。</p>
+<p>そもそも機械が使うことを前提とした仕様なので不便です。</p>
+<p>30秒以内に処理を完了できない場合は Google App Engine の制限によりエラー終了します。</p>
+<p>以上、期待したみなさまにお詫び申し上げます <code>m(_ _)m</code></p>
+
+<hr/>
+  
+<pre>Health check:
+
+    http://extractlha.appspot.com/extractlha
+
+Fetch, extract and zip:
+
+    http://extractlha.appspot.com/extractlha?req=fetch&amp;url=&lt;Encoded URL&gt;
+</pre>
+
+<hr/>
+
+<pre>extractlha
+
+Copyright 2010 <a href="http://sites.google.com/site/michinobumaeda/">Michinobu Maeda</a>.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</pre>
+
+<p><a href="NOTICE.txt">NOTICE.txt</a>
+/ <a href="LICENSE-2.0.txt">LICENSE-2.0.txt</a></p>
+
+  </body>
+</html>

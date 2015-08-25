@@ -1,0 +1,171 @@
+<?php
+/*
+ * 郵便番号JSON細切れデータを prototype.js で利用するプログラムのサンプル
+ * 
+ * Copyright 2009 Michinobu Maeda.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+?> 
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>郵便番号JSON細切れデータを prototype.js で利用するサンプル</title>
+    <link rel="stylesheet" type="text/css" href="prototype-json.css" />
+    <script language="JavaScript" type="text/javascript" src="prototype.js"></script>
+    <script language="JavaScript" type="text/javascript" charset="UTF-8" src="prototype-json.js"></script>
+  </head>
+  <body>
+    <h1>郵便番号JSON細切れデータを prototype.js で利用するサンプル</h1>
+    <p><a href="/">Top</a> - <a href="./">サンプル</a></p>
+    <form id="main" name="main" action="http://localhost/">
+      <div id="instarea">
+      </div>
+      <div id="inputarea">
+        <div id="ziparea">
+          <div id="ziphead">郵便番号</div>
+          <div id="zip">
+            <input id="zip1" name="zip1" type="text" maxlength="3" istyle="4" />
+            -
+            <input id="zip2" name="zip2" type="text" maxlength="4" istyle="4" />
+          </div>
+          <div id="zipmsg"></div>
+        </div>
+        <div id="prefarea">
+          <div id="prefhead">都道府県</div>
+          <select id="pref" name="pref">
+            <option value="-" selected>-- 選択してください --</option>
+            <option value="01" id="pref01">北海道</option>
+            <option value="02" id="pref02">青森県</option>
+            <option value="03" id="pref03">岩手県</option>
+            <option value="04" id="pref04">宮城県</option>
+            <option value="05" id="pref05">秋田県</option>
+            <option value="06" id="pref06">山形県</option>
+            <option value="07" id="pref07">福島県</option>
+            <option value="08" id="pref08">茨城県</option>
+            <option value="09" id="pref09">栃木県</option>
+            <option value="10" id="pref10">群馬県</option>
+            <option value="11" id="pref11">埼玉県</option>
+            <option value="12" id="pref12">千葉県</option>
+            <option value="13" id="pref13">東京都</option>
+            <option value="14" id="pref14">神奈川県</option>
+            <option value="15" id="pref15">新潟県</option>
+            <option value="16" id="pref16">富山県</option>
+            <option value="17" id="pref17">石川県</option>
+            <option value="18" id="pref18">福井県</option>
+            <option value="19" id="pref19">山梨県</option>
+            <option value="20" id="pref20">長野県</option>
+            <option value="21" id="pref21">岐阜県</option>
+            <option value="22" id="pref22">静岡県</option>
+            <option value="23" id="pref23">愛知県</option>
+            <option value="24" id="pref24">三重県</option>
+            <option value="25" id="pref25">滋賀県</option>
+            <option value="26" id="pref26">京都府</option>
+            <option value="27" id="pref27">大阪府</option>
+            <option value="28" id="pref28">兵庫県</option>
+            <option value="29" id="pref29">奈良県</option>
+            <option value="30" id="pref30">和歌山県</option>
+            <option value="31" id="pref31">鳥取県</option>
+            <option value="32" id="pref32">島根県</option>
+            <option value="33" id="pref33">岡山県</option>
+            <option value="34" id="pref34">広島県</option>
+            <option value="35" id="pref35">山口県</option>
+            <option value="36" id="pref36">徳島県</option>
+            <option value="37" id="pref37">香川県</option>
+            <option value="38" id="pref38">愛媛県</option>
+            <option value="39" id="pref39">高知県</option>
+            <option value="40" id="pref40">福岡県</option>
+            <option value="41" id="pref41">佐賀県</option>
+            <option value="42" id="pref42">長崎県</option>
+            <option value="43" id="pref43">熊本県</option>
+            <option value="44" id="pref44">大分県</option>
+            <option value="45" id="pref45">宮崎県</option>
+            <option value="46" id="pref46">鹿児島県</option>
+            <option value="47" id="pref47">沖縄県</option>
+          </select>
+          <div id="prefmsg"></div>
+        </div>
+        <div id="cityarea">
+          <div id="cityhead">市区町村</div>
+          <input id="city" name="city" type="text" istyle="1" />
+          <div id="citymsg"></div>
+        </div>
+        <div id="add1area">
+          <div id="add1head">住所１</div>
+          <input id="add1" name="add1" type="text" istyle="1" />
+          <div id="add1msg"></div>
+        </div>
+        <div id="add2area">
+          <div id="add2head">住所２</div>
+          <input id="add2" name="add2" type="text" istyle="1" />
+          <div id="add2msg"></div>
+        </div>
+        <div id="corparea">
+          <div id="corphead">会社名</div>
+          <input id="corp" name="corp" type="text" istyle="1" />
+          <div id="corpmsg"></div>
+        </div>
+        <div id="partarea">
+          <div id="parthead">部署名</div>
+          <input id="part" name="part" type="text" istyle="1" />
+          <div id="partmsg"></div>
+        </div>
+        <div id="kanaarea">
+          <div id="kanahead">ふりがな</div>
+          <input id="skana" name="skana" type="text" istyle="1" />
+          <input id="gkana" name="gkana" type="text" istyle="1" />
+          <div id="kanamsg"></div>
+        </div>
+        <div id="namearea">
+          <div id="namehead">氏名</div>
+          <input id="sname" name="sname" type="text" istyle="1" />
+          <input id="gname" name="gname" type="text" istyle="1" />
+          <div id="namemsg"></div>
+        </div>
+      </div>
+      <div id="bottomarea">
+        <input id="reset" name="reset" type="reset" value="リセット" />
+      </div>
+    </form>
+
+    <h2>1. テストデータの例</h2>
+
+    <p>郵便番号から入力して候補を絞る場合、該当データが 1件だけの場合と複数件の場合で動作が異なります。</p>
+    <ul>
+      <li>001-0010 : 札幌市北区北十条西１〜４丁目 ( 住所 4件 )</li>
+      <li>100-0001 : 東京都千代田区千代田 ( 住所 1件 )</li>
+      <li>102-8688 : 東京都千代田区九段南１丁目２−１（麹町支店私書箱第９号）東京都千代田区役所 ( 事業所 1件 )</li>
+      <li>001-0009 : ※該当データ無し</li>
+    </ul>
+    <p>都道府県・市区町村を選択して候補を絞る場合、住所と事業所それぞれのリストを表示します。</p>
+    <p>東京都千代田区などデータ量の多いところでは処理に時間がかかります。</p>
+    
+    <h2>2. 本題とは関係ない話</h2>
+
+    <h3>2.1. 郵便番号の文字種チェック</h3>
+    <p>JavaScript でできるだけチェックしています。英字、全角数字など入力してみてください。</p>
+    
+    <h3>2.2. ふりがなの文字種チェック</h3>
+    <p>Unicode の文字コードの範囲でチェックしているのですが、
+      unicode.org の資料を見てもどのコードが JIS のどの文字に対応しているのやら...
+      とりあえずこの設定で実用上の問題は無いと思います。</p>
+    
+    <h3>2.3. ime-mode の設定について</h3>
+    <p>CSS で ime-mode 属性を設定しています。これはどうも
+      Microsoft 独自拡張のようです。 Mac の Firefox では効きませんでした。</p>
+    <p>携帯の場合は DoCoMo が決めた HTML の istyle 属性があり au も対応しています。
+      Softbank など他の事業者についてはわかりません。</p>
+    <hr />
+    <p id="copyright">Copyright 2009 Michinobu Maeda.</p>
+  </body>
+</html>

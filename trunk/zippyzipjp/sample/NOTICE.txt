@@ -1,0 +1,5 @@
+zippyzip
+Copyright 2008-2010 Michinobu Maeda.
+
+This product includes software developed by
+The jQuery Project (http://jquery.com/).

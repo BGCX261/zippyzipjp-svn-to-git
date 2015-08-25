@@ -1,0 +1,85 @@
+#summary JSON細切れデータを取り込むスクリプト
+
+= JSON細切れデータを取り込むスクリプト =
+
+JQuery のサンプル ( [http://zippyzipjp.appspot.com/list/jquerysamplez 郵便番号 → 住所] / [http://zippyzipjp.appspot.com/list/jquerysamplea 郵便番号 ← 住所] / [http://zippyzipjp.appspot.com/list/jquerysample 郵便番号 ←→ 住所] ) で使っている JSON細切れデータを自分のサーバに置くために、まず [http://zippyzipjp.appspot.com/zippyzipjp/feed.atom フィード] をチェックして、更新されていたらダウンロード & 解凍するスクリプトです。JSON細切れデータについては [Formats 配布物のフォーマット] をご参照ください。
+
+[http://code.google.com/p/zippyzipjp/downloads/list Downloads] から最新版を取得してください。
+
+== Python版 ==
+
+ディレクトリ python の下に 3個のファイルがあります。
+
+{{{
+const.py
+}}}
+
+Python で定数 ( のようなもの ) を実現するクラスです。詳しくは http://code.activestate.com/recipes/65207/ をご参照ください。
+
+{{{
+getzippyzipjp_conf.py
+}}}
+
+JSON細切れデータの圧縮ファイルを保存するディレクトリ `const.arcdir` と、JSON細切れデータを保存するディレクトリ `const.target` をそれぞれ自分の環境に合わせて書き換えてください。
+
+{{{
+getzippyzipjp.py
+}}}
+
+このファイルを実行します。 cron 等で 1日 1回程度実行すればいいと思います。こんな感じで
+
+`53 0 * * * /usr/bin/python /var/www/zippyzipjp/python/getzippyzipjp.py >> /var/log/getzippyzipjp.log 2>&1`
+
+== Ruby版 ==
+
+ディレクトリ ruby の下に 2個のファイルがあります。
+
+{{{
+getzippyzipjp_conf.rb
+}}}
+
+JSON細切れデータの圧縮ファイルを保存するディレクトリ `ARCDIR` と、JSON細切れデータを保存するディレクトリ `TARGET` と、ZIP アーカイブ解凍のためのコマンド `ZIPCOMMAND` をそれぞれ自分の環境に合わせて書き換えてください。 Ruby 1.8 の標準添付ライブラリには ZIP アーカイブに対応したものが入っていなくて、また、私の開発環境になぜか rubyzip をうまくインストールできなかったので、 ZIP アーカイブの解凍のために外部コマンドを呼び出しています。
+
+{{{
+getzippyzipjp.rb
+}}}
+
+このファイルを実行します。 cron 等で 1日 1回程度実行すればいいと思います。こんな感じで
+
+`37 1 * * * /usr/bin/ruby /var/www/zippyzipjp/ruby/getzippyzipjp.rb >> /var/log/getzippyzipjp.log 2>&1`
+
+== PHP版 ==
+
+ディレクトリ php の下に 2個のファイルがあります。
+
+{{{
+getzippyzipjp_conf.php
+}}}
+
+JSON細切れデータの圧縮ファイルを保存するディレクトリ `ARCDIR` と、JSON細切れデータを保存するディレクトリ `TARGET` をそれぞれ自分の環境に合わせて書き換えてください。
+
+{{{
+getzippyzipjp.php
+}}}
+
+このファイルを実行します。 cron 等で 1日 1回程度実行すればいいと思います。こんな感じで
+
+`23 2 * * * /usr/bin/php /var/www/zippyzipjp/php/getzippyzipjp.php >> /var/log/getzippyzipjp.log 2>&1`
+
+== Perl版 ==
+
+ディレクトリ perl の下に 2個のファイルがあります。
+
+{{{
+getzippyzipjp.conf
+}}}
+
+JSON細切れデータの圧縮ファイルを保存するディレクトリ `arcdir` と、JSON細切れデータを保存するディレクトリ `taregt` をそれぞれ自分の環境に合わせて書き換えてください。
+
+{{{
+getzippyzipjp.pl
+}}}
+
+このファイルを実行します。 cron 等で 1日 1回程度実行すればいいと思います。こんな感じで
+
+`13 3 * * * /usr/bin/perl /var/www/zippyzipjp/perl/getzippyzipjp.pl >> /var/log/getzippyzipjp.log 2>&1`

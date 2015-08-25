@@ -1,0 +1,62 @@
+-- CSVデータでDBテーブルを更新するサンプルで使用するテーブル
+
+-- http://www.phpmyadmin.net
+--
+-- ホスト: localhost
+-- 生成時間: 2010 年 7 月 17 日 23:04
+-- サーバのバージョン: 5.1.32
+-- PHP のバージョン: 5.2.10
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- データベース: `zippyzip`
+--
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `city`
+--
+
+CREATE TABLE IF NOT EXISTS `city` (
+  `pref_code` char(2) COLLATE utf8_unicode_ci NOT NULL,
+  `city_code` char(3) COLLATE utf8_unicode_ci NOT NULL,
+  `city_name` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `city_kana` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`pref_code`,`city_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `pref`
+--
+
+CREATE TABLE IF NOT EXISTS `pref` (
+  `pref_code` char(2) COLLATE utf8_unicode_ci NOT NULL,
+  `pref_name` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `pref_kana` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`pref_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `zip`
+--
+
+CREATE TABLE IF NOT EXISTS `zip` (
+  `zip_code` char(7) COLLATE utf8_unicode_ci NOT NULL,
+  `pref_code` char(2) COLLATE utf8_unicode_ci NOT NULL,
+  `city_code` char(3) COLLATE utf8_unicode_ci NOT NULL,
+  `add1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `add2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `firm` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `add1_kana` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `add2_kana` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `firm_kana` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `note` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_firm` tinyint(1) NOT NULL,
+  KEY `zip_code` (`zip_code`,`pref_code`,`city_code`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+    <cron>
+        <url>/zippyzipjp/job/startUpdate</url>
+        <description>Check, get and manipulate Japan Post's contents</description>
+        <schedule>every day 13:01</schedule>
+    </cron>
+</cronentries>

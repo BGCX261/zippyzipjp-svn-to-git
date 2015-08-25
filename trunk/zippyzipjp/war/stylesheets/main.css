@@ -1,0 +1,162 @@
+@CHARSET "UTF-8";
+/*
+ * zippyzipjp
+ * 
+ * Copyright 2008-2010 Michinobu Maeda.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+    margin: 0;
+    background: #ccc;
+}	
+body, h1, h2, h3, h4, h5, h6, div, p, input, select, option, ul, ol, li, th, td, dl, dt, dd {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    text-decoration: none;
+    line-height: 150%;
+}
+div, td, th, input, textarea, option, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+p, form {
+	margin: .25em .5em .25em .5em;
+}
+#body {
+}
+#header {
+    background: #ffe;
+}
+#content {
+	clear: both;
+    padding: .5em 0 .5em 0;
+    background-color: #ffe;
+}
+#footer {
+    clear: both;
+    padding: .25em;
+    margin: 0 0 .25em 0;
+    background: #c60;
+    color: #fff;
+}
+h1 {
+	display: inline-block;
+	float: left;
+	font-size: 180%;
+    color: #c60;
+    line-height: 120%;
+    margin: 0 0 .25em 0;
+    padding: 0 .25em 0 .25em;
+}
+h1 a {
+	text-decoration: none;
+	color: #c60;
+}
+#status {
+	display: inline-block;
+	margin: 1em 0 0 1em;
+    color: #900;
+}
+h2 {
+	font-size: 120%;
+    background-color: #ea0;
+    color: #fff;
+    margin: .5em 0 .5em 0;
+    padding: 0 .5em 0 .5em;
+}
+h3 {
+    font-size: 100%;
+    background-color: #d90;
+    color: #fff;
+    margin: .5em 0 .5em 0;
+    padding: 0 .5em 0 .5em;
+}
+h3 a {
+    color: #fff;
+}
+h3 a:hover {
+    color: #ffe;
+}
+table {
+    border-collapse:collapse;
+    margin: .1em .25em .1em .25em;
+    font-size: 75%; 
+}
+th {
+    background-color: #c60;
+    border: solid 1px #fff;
+    color: #fff;
+    padding: .1em .25em .1em .25em;
+}
+td {
+	border: solid 1px #c60;
+    color: #000;
+    padding: .1em .25em .1em .25em;
+}
+#refreshpage {
+    display: inline-block;
+    float: right;
+    padding: 0 .5em 0 .5em;
+}
+#bc {
+    clear: both;
+    background: #c60;
+    color: #fff;
+    padding: .1em .5em .1em .5em;
+    margin: 0;
+}
+#bc a {
+    color: #fff;
+}
+.list {
+    font-size: 75%; 
+}
+.list p {
+	padding: 0 0 0 0;
+}
+.odd {
+	background-color: #fff;
+    border-bottom: solid 1px #ffd;
+}
+.even {
+    background-color: #ffd;
+	    border-bottom: solid 1px #fff;
+}
+.name {
+    color: #903;
+}
+.note {
+	color: #03c;
+}
+ol, ul {
+	padding: 0 0 0 1.5em;
+	margin: 0 0 0 0;
+}
+.timestamp {
+    padding: 0 .25em 0 .25em;
+    font-size: 75%;
+    text-align: right;    
+}
+#copyright {
+	font-size: 75%;
+    color: #fff;
+}
+#copyright a {
+	color: #fff;
+}
+.notice {
+	font-size: 75%;
+}

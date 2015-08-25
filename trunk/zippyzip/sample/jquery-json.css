@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+/* 
+ * 郵便番号JSON細切れデータを jQury で利用するプログラムのサンプル
+ * 
+ * Copyright 2010 Michinobu Maeda.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+body, h1, h2, h3, h4, h5, h6, div, p, input, select, option, ul, ol, li, th, td, dl, dt, dd {
+	font-family: sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+}
+body, h1, h2, h3, h4, h5, h6, div, p, input, select, option, th, td, dl, dt, dd {
+    margin: 0;
+}
+ul, ol, li {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+p, ul, ol, li, th, td, dl, dt, dd {
+	line-height: 150%;
+}
+input, radio, button {
+    font-family: sans-serif;
+	font-size: 100%;
+	margin: .1em .1em .1em .1em;
+	height: 2em;
+	padding: 0 .2em 0 .2em;
+    font-size: 100%;
+}
+select {
+    margin: .1em .1em .1em .1em;
+    padding: 0 .2em 0 .2em;
+}
+body {
+    background: #666;
+}
+#header {
+	padding: 0 0 1em 0;
+    background: #ffe;
+}
+h1 {
+	font-size: 150%;
+	color: #996;
+	margin: 0;
+	padding: .25em .5em;
+}
+#breadcrumb {
+    padding: .1em .5em .2em .5em;
+    background: #996;
+    color: #fff;
+}
+#breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 .25em;
+}
+#breadcrumb a:hover {
+    background: #ffe;
+    color: #996;
+}
+#body {
+	padding: 10px 10px;
+    background: #ffe;
+}
+#footer {
+    padding: 1em 0;
+    background: #ffe;
+}
+#copyright {
+    padding: .25em .5em;
+    background: #996;
+    color: #fff;
+}
+.title {
+	display: inline-block;
+	width: 5em;
+	line-height: 2.5em;
+}
+.short-col {
+    display: inline-block;
+    width: 18em;
+}
+#zip1, #zip2 {
+	ime-mode: disabled;
+}
+#city, #add1, #add2, #corp {
+    ime-mode: active;
+}
+#zip1 {
+	width: 3em;
+}
+#zip2 {
+	width: 4em;
+}
+#pref {
+    width: 14em;
+    font-size: 100%;
+}
+#city {
+	width: 16em;
+}
+#add1, #add2, #corp {
+	width: 30em;
+}
+#reset {
+    margin: 1em .5em;
+    padding: .25em 1em;
+    width: 8em;
+}

@@ -1,0 +1,7 @@
+extractlha
+Copyright 2010 Michinobu Maeda.
+
+This product includes software developed by
+Michel Ishizuka (http://homepage1.nifty.com/dangan/).
+
+Powered by Google App Engine.

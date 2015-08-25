@@ -1,0 +1,94 @@
+<!-- 
+ * 郵便番号JSON細切れデータを jQury で利用するプログラムのサンプル
+ * 
+ * Copyright 2010 Michinobu Maeda.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>郵便番号JSON細切れデータを jQury で利用するサンプル</title>
+    <link rel="stylesheet" type="text/css" href="jqueryui/css/ui-lightness/jquery-ui-1.8.2.custom.css" />
+    <link rel="stylesheet" type="text/css" href="jquery-json.css" />
+    <script type="text/javascript" charset="UTF-8" src="jqueryui/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="jqueryui/js/jquery-ui-1.8.2.custom.min.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="jquery-json.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <div id="header">
+        <h1>郵便番号JSON細切れデータを jQury で利用するサンプル</h1>
+        <div id="breadcrumb"><a href="/">Top</a> » <a href="./">サンプル</a></div>
+      </div>
+      <div id="body">
+        <form id="main">
+          <div>
+            <span class="title">郵便番号</span>
+            <span class="short-col">
+              <input type="text" id="zip1" name="zip1" value="" maxlength="3" />
+              -
+              <input type="text" id="zip2" name="zip2" value="" maxlength="4" />
+            </span>
+            <button id="showAdd">住所の候補を選択</button>
+          </div>
+          <div>
+            <span class="title">都道府県</span>
+            <span class="short-col">
+              <input type="text" id="pref" name="pref" value="" />
+            </span>
+            <button id="showCity">市区町村の候補を選択</button>
+          </div>
+          <div>
+            <span class="title">市区町村</span>
+            <span class="short-col">
+              <input type="text" id="city" name="city" value="" />
+            </span>
+            <input type="hidden" id="x0402" name="x0402" value="" />
+            <button id="showZip">郵便番号の候補を選択</button>
+          </div>
+          <div>
+            <span class="title">住所１</span>
+            <input type="text" id="add1" name="add1" value="" />
+          </div>
+          <div>
+            <span class="title">住所２</span>
+            <input type="text" id="add2" name="add2" value="" />
+          </div>
+          <div>
+            <span class="title">事業所</span>
+            <input type="text" id="corp" name="corp" value="" />
+          </div>
+          <div>
+            <span class="title">&nbsp;</span>
+            <input type="reset" id="reset" name="reset" value="リセット" />
+          </div>
+        </form>
+        <p>郵便番号 7桁を入力すると、住所の選択リストが出きます。</p>
+        <p>都道府県を選択すると、市区町村の選択リストが出てきて、それをさらに選択すると、郵便番号の選択リストが出てきます。</p>
+        <p>郵便番号から入力する場合のテストデータの例です ( 2010年6月現在有効なもの ) 。</p>
+        <ul>
+          <li>111-1111 : 該当データ無し。選択リストは表示されません。</li>
+          <li>001-0010 : 札幌市北区北十条西１〜４丁目 ( 住所 4件 )</li>
+          <li>100-0001 : 東京都千代田区千代田 ( 住所 1件 )</li>
+          <li>102-8688 : 東京都千代田区九段南１丁目２−１（麹町支店私書箱第９号）東京都千代田区役所 ( 事業所 1件 )</li>
+        </ul>
+      </div>
+      <div id="footer">
+        <div id="copyright">Copyright <span id="crYear"></span> Michinobu Maeda.</div>
+      </div>
+    </div>
+  </body>
+</html>
